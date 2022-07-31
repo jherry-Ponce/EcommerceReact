@@ -2,18 +2,33 @@ import Accordion from "react-bootstrap/Accordion";
 import ImageGallaryComponent from "../Home/ImageGallaryComponent"; 
 import { Row, Col, Container, Table, ProgressBar } from "react-bootstrap";
 import { CarrouselCategori } from "../Home/CarrouselCategori";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { productApi } from "../../helpers/ProductsApi";
 
 const Product = () => {
+   const {id}=useParams()
+   const[product,setProduct]=useState([])
+   useEffect(()=>{
+       productApi().then((produc)=>setProduct(Object.values(produc).map((prod)=>prod)
+       .filter((produccate)=>produccate.id==(id))))
+   },[id])
+   console.log(product.id)
   return (
-    <Container fluid>
-      <Row className="mx-auto my-3">
-        <Col lg={7} className="">
+
+    <Container >
+
+      {product.map((dato)=>
+        <Row className="mx-auto my-3">
+        
+        
+          <Col lg={7} className="me-3">
           <Row>
             <div className="container bg-white">
-             <ImageGallaryComponent />
+             <ImageGallaryComponent images={dato.images} />
             </div>
           </Row>
-          <Row className="d-md-block d-none">
+          <Row className="d-md-block d-none ">
             <Accordion defaultActiveKey={["2"]} alwaysOpen>
               <Accordion.Item eventKey="0">
                 <Accordion.Header>
@@ -298,12 +313,11 @@ const Product = () => {
               </Accordion.Item>
             </Accordion>
           </Row>
-        </Col>
+          </Col>
         <Col lg={4}>
           <div>
             <h3>
-              Laptop Gamer Lenovo 15.6" Intel Core i5 10°Gen 1TB HDD 8GB RAM GTX
-              1650
+            {dato.title}
             </h3>
             <div className="my-1">
               <span>
@@ -330,7 +344,7 @@ const Product = () => {
             <div className="">
               <div className="discontinuado">
                 <span style={{ color: "#AAAFAA" }}>
-                  <s>S/ 3,599.00 </s>
+                  <s>S/{dato.price}.00 </s>
                 </span>{" "}
                 - 9%
               </div>
@@ -338,7 +352,7 @@ const Product = () => {
                 style={{ color: "#EA2840", fontSize: "25px" }}
                 className="fw-bold"
               >
-                S/ 2,869.00
+                S/ {dato.descuento}.00
               </div>
               <p>Precio exclusivo en web.</p>
             </div>
@@ -426,8 +440,11 @@ const Product = () => {
             </div>
           </div>
         </Col>
-      </Row>
-      <Row className="d-block d-md-none">
+
+      </Row>)
+      }
+
+      <Row className="d-block d-md-none ">
             <Accordion defaultActiveKey={["2"]} alwaysOpen>
               <Accordion.Item eventKey="0">
                 <Accordion.Header>

@@ -11,29 +11,28 @@ import { productApi } from '../../helpers/ProductsApi';
 export const CategoriaItems=(props)=>{
     const[product,setProduct]=useState([])
     useEffect(()=>{
-        productApi().then((produc)=>
-        setProduct(
-            produc.map((prod)=>prod)
-           .filter((produccate)=>produccate.category_id==(props.id)),
-           
-        ))
-        console.log(props.id)
+        productApi().then((produc)=>setProduct(Object.values(produc).map((prod)=>prod)
+        .filter((produccate)=>produccate.category_id==(props.id))))
     },[props.id])
-    
     return(
         < >
           <Row lg={4} md={3} sm={2} xs={2}>  
-          { product.map((variant,index) =>(
-            props.tipo === 'grid'?
-                <Col key={index} className='mb-2'>
-                    <CardProduct img={variant.images[0]} name={variant.title} price={variant.price} desc={variant.descuento}/>                    
+      
+            {
+                product.map((variant)=>(
+                props.tipo === 'grid'?
+                <Col  className='mb-2'>
+                    <CardProduct product={variant} img={variant.images[0]} name={variant.title} price={variant.price} desc={variant.descuento}/>                    
+                </Col>:
+                <Col xs={12} sm={12} md={12} lg={12} xl={12}  className='mb-2'>
+                  <CardProductHorizontal product={variant} img={variant.images[0]} name={variant.title} price={variant.price} desc={variant.descuento}/>  
                 </Col>
-                :
-                <Col key={index} xs={12} sm={12} md={12} lg={12} xl={12}  className='mb-2'>
-                   <CardProductHorizontal  img={variant.images[0]} name={variant.title} price={variant.price} desc={variant.descuento}/> 
-                </Col>
-            )) }                                 
-            </Row>              
+                ))
+             }                    
+            </Row>   
+            {/*
+           
+                : */}           
         </>
     )
 }

@@ -2,16 +2,16 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-const  ImageGallaryComponent = (props) => {
-   console.log(props);
+const  ImageGallaryComponent = ({images}) => {
+   console.log(images);
         return (
             <div>     
                        
                 <Carousel interval="5000" transitionTime="1000">
-                  {
-                   /*  <div>
-                        <img src={} />                        
-                    </div> */
+                  {images.map((img,index)=>
+                     <div key={index}>
+                        <img src={img} />                        
+                    </div> )
                   }
                     
                 </Carousel>

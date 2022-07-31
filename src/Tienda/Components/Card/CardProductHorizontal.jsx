@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import { Button, Row, Col } from "react-bootstrap";
+import { CartContext } from "../../../Context/CartContext";
 
 const CardProductHorizontal=(props)=>  {
+ const {addItemToCart} =useContext(CartContext) 
     return (
       <Card className="flex-row cardProd">
         <Card.Img
@@ -39,6 +41,7 @@ const CardProductHorizontal=(props)=>  {
                 </div>
               </Col>
             </Row>
+            <Button className="mt-2 btn btn-success w-100" onClick={()=>addItemToCart(props.product)}  >Comprar</Button>
           </Card.Text>
         </Card.Body>
       </Card>

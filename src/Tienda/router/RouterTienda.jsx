@@ -15,7 +15,7 @@ export const RouterTienda = () => {
     <NavBar/>
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="Product" element={<Product/>} />
+        <Route path="Product/:id" element={<Product/>} />
         <Route path="Category/:id" element={<Categoryproducts/>} />
         <Route path="Logeado" element={<Loegado/>}/>
         <Route path="cart" element={<Carshopping/>}/>

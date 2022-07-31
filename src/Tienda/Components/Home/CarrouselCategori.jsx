@@ -58,8 +58,9 @@ export const CarrouselCategori = () => {
   const [products, setProducts] = useState([])
 
   useEffect(()=>{
-    productApi().then((prod)=>setProducts(prod.filter((produc)=>produc.MaxVent>10)))
+    productApi().then((prod)=>setProducts(Object.values(prod).filter((produc)=>produc.MaxVent>10)))
   }, [])
+  
   return (
     <Container className="my-5">
        PRODUCTOS DESTACADOS{" "}
