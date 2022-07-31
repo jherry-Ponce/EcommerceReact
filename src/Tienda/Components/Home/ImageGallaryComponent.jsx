@@ -1,11 +1,12 @@
-/* import React from "react";
+import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-class ImageGallaryComponent extends React.Component {
-    render() {
+const  ImageGallaryComponent = () => {
+   
         return (
-            <div>                
+            <div>     
+                       
                 <Carousel interval="5000" transitionTime="1000">
                     <div>
                         <img src="https://i.linio.com/p/77488b075798cddb165a9764840555fc-product.webp" />                       
@@ -19,6 +20,6 @@ class ImageGallaryComponent extends React.Component {
                 </Carousel>
             </div>
         )
-    };
+
 }
-export default ImageGallaryComponent; */
+export default ImageGallaryComponent; 

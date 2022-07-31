@@ -82,7 +82,7 @@ export const Carshopping = () => {
               </div>
               <div className="card-footer">
                 <Link to="/checkout" className="btn btn-primary float-end">
-                  {/*          Make Purchase <IconChevronRight className="i-va" /> */}
+                  Ir a Pagar
                 </Link>
                 <Link to="/" className="btn btn-secondary">
                   {/*  <IconChevronLeft className="i-va" />  */}Continue shopping

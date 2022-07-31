@@ -8,7 +8,7 @@ import { productApi } from "../../helpers/ProductsApi";
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { CartContext } from '../../../Context/CartContext';
-/* import ImageGallaryComponent from "./ImageGallaryComponent" */
+import ImageGallaryComponent from "./ImageGallaryComponent" 
 export const CarrouselCategori = () => {
   const [show, setShow] = useState(false);
 
@@ -100,8 +100,8 @@ export const CarrouselCategori = () => {
                       className="iconCard fa fa-search-plus fa-2x"
                       aria-hidden="true"                      
                       onClick={handleShow} style={{color:"black"}}
-                    ></i>
-                    <Modal
+                    ></i>{show===true?
+                      <Modal
                       show={show}
                       onHide={handleClose}
                       size="md"
@@ -110,13 +110,19 @@ export const CarrouselCategori = () => {
                     >
                       <Modal.Header closeButton>
                         <Modal.Title>Laptop Gamer Lenovo 15.6"</Modal.Title>
+                        {console.log("modal")}
                       </Modal.Header>
                       <Modal.Body>                        
-                        {/* <ImageGallaryComponent/> */}
+                         <ImageGallaryComponent/> 
                       </Modal.Body>
-                      <Modal.Footer>                        
+                      <Modal.Footer>     
+                      <Button variant="secondary" onClick={handleClose}>
+                        Close
+                      </Button>                   
                       </Modal.Footer>
-                    </Modal>
+                    </Modal>:""
+                    }
+                    
                   </div>
                   <div className="d-flex justify-content-center align-items-center">
                     <i

@@ -80,48 +80,48 @@ export const OficialTiendas = () => {
       </Row>
       <Row className="my-5">
         <h3 className="mb-3">¡NO LO PIENSES MÁS!</h3>
-        <Col lg={2} md={4} xs={6} className="mb-2">
+        <Col lg={4} md={4} xs={6} className="mb-2">
           <img
             src="https://dynamic-yield.linio.com//api/scripts/8767678/images/2f2143fcd995f__bt_app_laptops_generico_semana_app.jpg"
             alt=""
-            className="w-100"            
+            className=""            
           />
         </Col>
-        <Col lg={2} md={4} xs={6} className="mb-2">
+        <Col lg={4} md={4} xs={6} className="mb-2">
           <img
             src="https://dynamic-yield.linio.com//api/scripts/8767678/images/260a03eaf0368__375x375px_consolas1.jpg"
             alt=""
-            className="w-100"           
+            className=""           
           />
         </Col>
-        <Col lg={2} md={4} xs={6} className="mb-2">
+        <Col lg={4} md={4} xs={6} className="mb-2">
           <img
             src="https://dynamic-yield.linio.com//api/scripts/8767678/images/bc9b5fc91b6f__375x375px_videojuegos.jpg"
             alt=""
-            className="w-100"
+            className=""
           />
         </Col>
-        <Col lg={2} md={4} xs={6} className="mb-2">
+     {/*    <Col lg={2} md={4} xs={6} className="mb-2">
           <img
             src="https://dynamic-yield.linio.com//api/scripts/8767678/images/321f341e101d3__375x375px_sillas.jpg"
             alt=""
-            className="w-100"
+            className=""
           />
         </Col>
         <Col lg={2} md={4} xs={6} className="mb-2">
           <img
             src="https://dynamic-yield.linio.com//api/scripts/8767678/images/28744030009ba__375x375px_monitores.jpg"
             alt=""
-            className="w-100"
+            className=""
           />
         </Col>
         <Col lg={2} md={4} xs={6} className="mb-2">
           <img
             src="https://dynamic-yield.linio.com//api/scripts/8767678/images/25805a030953e__375x375px_accesorios.jpg"
             alt=""
-            className="w-100"
+            className=""
           />
-        </Col>
+        </Col> */}
       </Row>
     </Container>
   );

@@ -9,6 +9,7 @@ export const Rutas = () => {
       <Routes>
         <Route path="login" element={<FormLogin/>} />
         <Route path="register" element={<FromRegistrol/>}/>
+       
         <Route path="/*" element={<RouterTienda />}/>
       </Routes>
     </>

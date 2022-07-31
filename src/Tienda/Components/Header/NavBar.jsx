@@ -102,14 +102,15 @@ export const NavBar = () => {
             id="responsive-navbar-nav"
             className="collapse navigation-menu bg-dark bg-opacity-25 w-100 position-absolute  "
           >
-            <Container className=" h-max d-none d-md-block">
-              <div className=" row h-max row-cols-4 position-relative">
-                <ul className="bg-white h-max py-3 px-0 ">
+            <Container className="  d-none d-md-block">
+              <div className=" row row-cols-4 position-relative">
+                <div className="px-0">
+                <ul className="bg-white  py-3 px-0 h-100 ">
                 {categ.length>0?
                   categ.map((data, index) => (
                       <li key={index} className="navigation-link text-primary ">
                         <Link 
-                         to="/Category"
+                         to={`/Category/${data.id}`}
                           className="py-2 text-sm text-dark d-flex align-items-center lista-menu "
                         >
                           <span className="d-flex justify-content-center w-25">
@@ -119,7 +120,7 @@ export const NavBar = () => {
                           {/* nombre categoria */}
                           {data.name} 
                         </Link >
-                        <div className="navigation-submenu bg-light position-absolute w-75 h-max top-0 navigation-menu-item ">
+                        <div className="navigation-submenu bg-light position-absolute w-75 h-100 top-0 navigation-menu-item ">
                            <SubCategory
                            Subcategory={data.subcategorias}
                         
@@ -128,6 +129,8 @@ export const NavBar = () => {
                       </li>
                   )):"cargando"}
                 </ul>
+                </div>
+                
                 <div className="col-9 bg-light">
                   <SubCategory/>
                 </div>

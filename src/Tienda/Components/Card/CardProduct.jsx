@@ -2,8 +2,8 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Button, Row, Col } from "react-bootstrap";
 
-class CardProduct extends React.Component {
-  render() {
+const CardProduct=(props)=> {
+  
     return (
       <>
         <Card
@@ -12,19 +12,18 @@ class CardProduct extends React.Component {
         >
           <Card.Img
             variant="top"
-            src="https://i.linio.com/p/77488b075798cddb165a9764840555fc-product.webp"
+            src={props.img}
             className="mx-auto"
           />
           <Card.Body className="d-flex flex-column justify-content-center align-items-center">
             <Card.Title className="fs-6 text-center fw-bolder ">
-              Laptop Gamer Lenovo 15.6" Intel Core i5 10°Gen 1TB HDD 8GB RAM GTX
-              1650
+             {props.name.substring(0,30)}...
             </Card.Title>
             <Card.Text className="d-flex flex-column justify-content-center align-items-center">
               <Row className="text-center text-danger fs-8 w-100">
-                <Col style={{fontSize:"20px"}} className="fw-bold">S/.3699.00</Col>
+                <Col style={{fontSize:"20px"}} className="fw-bold">S/.{props.desc}.00</Col>
                 <Col className="my-1 text-dark text-decoration-line-through small">
-                  S/.4099.00
+                  S/.{props.price}.00
                 </Col>
               </Row>
               <Row>
@@ -43,5 +42,4 @@ class CardProduct extends React.Component {
       </>
     );
   }
-}
 export default CardProduct;

@@ -1,16 +1,24 @@
+import { useEffect, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { categoryApi } from '../../helpers/CategoryApi';
 
-export const Categoryfilters=()=>{
+export const Categoryfilters=({id})=>{
+    const[subcate,setSubcate]=useState([])
+    useEffect(()=>{
+        categoryApi(id-1).then((categ)=>setSubcate(categ.subcategorias))
+    },[id])
     return(
         <>
             <Col lg={3}>
                 <h4>Desktop</h4>
                 <ListGroup variant="flush bg-white">
-                    <ListGroup.Item className='cursor-pointer'>Celulares y Smartphone</ListGroup.Item>
-                    <ListGroup.Item className='cursor-pointer'>Tablets</ListGroup.Item>
-                    <ListGroup.Item className='cursor-pointer'>Morbi leo risus</ListGroup.Item>
-                    <ListGroup.Item className='cursor-pointer'>Porta ac consectetur ac</ListGroup.Item>
+                    {
+                        subcate.map((subcategori)=>(
+                            <ListGroup.Item className='cursor-pointer'>{subcategori.name}</ListGroup.Item>  
+                        ))
+                    }
+                    
                 </ListGroup>
              </Col>
                    

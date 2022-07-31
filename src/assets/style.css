@@ -29,7 +29,10 @@
 .z-index-100 {
   z-index: 100;
 }
+.modal-backdrop.show{
 
+  opacity: 0!important;
+}
 .navigation-menu {
   /* metodo calc() calcula la altura 
     100vh es el total de alto de la pantalla y se le resta los 4rem del header para que tener el total de lo que sobra*/

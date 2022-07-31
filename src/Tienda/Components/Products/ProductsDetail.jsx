@@ -1,5 +1,5 @@
 import Accordion from "react-bootstrap/Accordion";
-/* import ImageGallaryComponent from "../Home/ImageGallaryComponent"; */
+import ImageGallaryComponent from "../Home/ImageGallaryComponent"; 
 import { Row, Col, Container, Table, ProgressBar } from "react-bootstrap";
 import { CarrouselCategori } from "../Home/CarrouselCategori";
 
@@ -10,7 +10,7 @@ const Product = () => {
         <Col lg={7} className="">
           <Row>
             <div className="container bg-white">
-             {/*  <ImageGallaryComponent /> */}
+             <ImageGallaryComponent />
             </div>
           </Row>
           <Row className="d-md-block d-none">

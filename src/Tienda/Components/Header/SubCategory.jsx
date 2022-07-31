@@ -2,7 +2,9 @@ import Row from 'react-bootstrap/Row';
 import { Link } from "react-router-dom";
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import { useEffect } from 'react';
 export const SubCategory = ({Subcategory}) => {
+
   return (
     <>
       <div>

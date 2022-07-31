@@ -8,7 +8,7 @@ import { Container, Dropdown } from "react-bootstrap";
 import '../../../assets/style.css'
 
 
-export const Cardcategory = () => {
+export const Cardcategory = ({id}) => {
   const defaultModo = "grid";
   const [tipo, setTipo] = useLocalStorage(
     "vista",
@@ -23,7 +23,7 @@ export const Cardcategory = () => {
     const newVista = "grid";
     setTipo(newVista);
   };
-
+ 
   return (
     <>
       <Container fluid className="w-100">
@@ -97,9 +97,9 @@ export const Cardcategory = () => {
           </Col>
         </Row>
         <Row className="mt-4">
-          <Categoryfilters />
+          <Categoryfilters id={id} />
           <Col lg={9}>
-            <CategoriaItems tipo={tipo} />
+            <CategoriaItems tipo={tipo} id={id} />
           </Col>
         </Row>
       </Container>
