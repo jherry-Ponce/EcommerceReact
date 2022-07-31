@@ -1,18 +1,14 @@
-/* import credit from "../../../../public/img/pago/credit.jpg"
-import paypal from "../../../../public/img/pago/paypal.jpg" */
+import credit from "../../../assets/img/credit.jpg"
+import paypal from "../../../assets/img/paypal.jpg"  
 
 import "../../../assets/Pagos.css"
 
 export const Pagos=()=>{
     return(
         <div>
-
             <h1 className="Tema">"Ckeckout"</h1>
-
             <div className="container d-flex Total">
-
                 <div className="Cajas">
-
                     <div className="Padre">
                         <div className="Arriba">
                             <h5><i class="bi bi-envelope"></i>Informacion de Contacto</h5>
@@ -54,12 +50,12 @@ export const Pagos=()=>{
                                 <div className="d-flex justify-content-between">
                                     <input type="radio" />
                                     <label htmlFor="">Credit Card</label>
-                                  {/*   <img src={credit} alt="" /> */}
+                                    <img src={credit} alt="" /> 
                                 </div>
                                 <div className="d-flex justify-content-between">
                                     <input type="radio" />
                                     <label htmlFor="">PayPal</label>
-                                 {/*    <img src={paypal} alt="" /> */}
+                                    <img src={paypal} alt="" /> *
                                 </div>
                             </div>
 

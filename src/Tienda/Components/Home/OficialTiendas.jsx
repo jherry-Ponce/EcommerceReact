@@ -101,7 +101,7 @@ export const OficialTiendas = () => {
             className=""
           />
         </Col>
-     {/*    <Col lg={2} md={4} xs={6} className="mb-2">
+         <Col lg={2} md={4} xs={6} className="mb-2">
           <img
             src="https://dynamic-yield.linio.com//api/scripts/8767678/images/321f341e101d3__375x375px_sillas.jpg"
             alt=""
@@ -121,7 +121,7 @@ export const OficialTiendas = () => {
             alt=""
             className=""
           />
-        </Col> */}
+        </Col> 
       </Row>
     </Container>
   );

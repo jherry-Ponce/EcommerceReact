@@ -7,6 +7,7 @@ import { useState,useEffect } from "react";
 import {categoryApi} from "../../helpers/CategoryApi"
 import { UserIcon } from "./UserIcon";
 import { Cart } from "../Cart/Cart";
+import { SubCategoryMovil } from "./SubCategoryMovil";
 export const NavBar = () => {
   const[categ, setCateg]=useState([]);
   const [scroling, setScroling] = useState(true);
@@ -127,10 +128,10 @@ export const NavBar = () => {
                           /> 
                         </div>
                       </li>
-                  )):"cargando"}
+                  )):<SubCategoryMovil/>}
                 </ul>
                 </div>
-                
+                    {/*  */}
                 <div className="col-9 bg-light">
                   <SubCategory/>
                 </div>

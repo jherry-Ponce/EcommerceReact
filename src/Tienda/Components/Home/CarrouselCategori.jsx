@@ -58,7 +58,7 @@ export const CarrouselCategori = () => {
   const [products, setProducts] = useState([])
 
   useEffect(()=>{
-    productApi().then((prod)=>setProducts(prod))
+    productApi().then((prod)=>setProducts(prod.filter((produc)=>produc.MaxVent>10)))
   }, [])
   return (
     <Container className="my-5">
@@ -109,11 +109,11 @@ export const CarrouselCategori = () => {
                       centered className="d-flex justify-content-center align-content-center"
                     >
                       <Modal.Header closeButton>
-                        <Modal.Title>Laptop Gamer Lenovo 15.6"</Modal.Title>
+                        <Modal.Title> {`${prod.title.substring(0,30)}.....`}</Modal.Title>
                         {console.log("modal")}
                       </Modal.Header>
                       <Modal.Body>                        
-                         <ImageGallaryComponent/> 
+                         <ImageGallaryComponent img={prod.images}/> 
                       </Modal.Body>
                       <Modal.Footer>     
                       <Button variant="secondary" onClick={handleClose}>

@@ -7,6 +7,7 @@ import Product from "../Components/Products/ProductsDetail";
 import { Categoryproducts } from "../Pages/Categoryproducts";
 import { Home } from "../Pages/Home";
 import { Loegado } from "../Pages/Logeado";
+import { Page404 } from "../Pages/Page404";
 
 export const RouterTienda = () => {
   return (
@@ -19,6 +20,7 @@ export const RouterTienda = () => {
         <Route path="Logeado" element={<Loegado/>}/>
         <Route path="cart" element={<Carshopping/>}/>
         <Route path="checkout" element={<Pagos/>} />
+        <Route path="/*" element={<Page404/>} />
       </Routes>
     <Footer/>
     </>

@@ -1,13 +1,12 @@
-import error from "../img/error.PNG"
+import error from "../../assets/img/error.png"
 
 import "../../assets/Error.css"
 
-const Error=()=>{
+export const Page404=()=>{
     return(
-        <div>
+        <div className="error">
             <img src={error} alt="" />
         </div>
     )
 }
 
-export default Error;
